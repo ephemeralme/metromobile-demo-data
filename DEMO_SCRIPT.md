@@ -6,9 +6,35 @@
 
 ---
 
-## The one sentence story (say this once at the start)
+## Business storyline (the “main plot” — say this in the intro)
 
-> “Metromobile is a fake broadband company in five CSV files. We’ll ask Cursor the same business questions three times — with nothing extra, then with **rules**, then with **skills** — and you’ll see how the answers change.”
+**Setup:** Metromobile leadership has **$2M** to spend. **Growth wants it for acquisition campaigns** (door-to-door + digital). You need to decide if that’s the right bet.
+
+**How the demo unfolds:**
+
+| Act | Business beat | Cursor layer |
+|-----|----------------|--------------|
+| 1 Raw | “What’s going on?” — churn looks huge; heavy callers look dangerous; acquisition sounds exciting | No context |
+| 2 Rules | “What can we actually fix?” — voluntary churn vs collections; don’t over-interpret calls | Rules |
+| 3 Skills | **“Where should the $2M go?”** — compare acquisition vs churn prevention vs repeat reduction | Skills |
+
+**Finale (Act 3, last prompt):** explicit question — *Where should we invest the $2M, and what outcome do we expect?*
+
+**Expected punchline:** Skills recommend **not** leading with acquisition (weak Year-1 ROI); put money toward **churn prevention** and/or **repeat reduction** (larger modeled return). Same data — better decision because of rules + skills.
+
+---
+
+## The one sentence story (Cursor product angle)
+
+> “We’ll walk from a messy first read of the data to a board-ready **$2M recommendation** — and you’ll see how **rules** and **skills** in Cursor change what the agent delivers.”
+
+**Optional opener prompt (30 sec, any mode):** Growth’s ask — paste if you want the $2M on screen early:
+
+```
+The head of growth wants $2M for acquisition campaigns. Using the campaigns data, calculate the connect rate (connects/prospects) for test vs control groups by channel. What's the incremental lift? Project what $2M buys at $80/door-knock and $15/digital prospect reached.
+```
+
+*Save the full acquisition vs churn vs repeat **comparison** for Act 3 — that’s the main ending.*
 
 ---
 
@@ -62,6 +88,8 @@ After **each** command:
 
 **Say:**
 
+- “**The decision:** Growth wants **$2M for acquisition**. We’re going to pressure-test that using five CSVs.”
+- “By the end, we’ll ask Cursor: **where should the $2M actually go?**”
 - “This is synthetic demo data, not a real customer.”
 - “50,000 subscribers in the file; slides may say 500k for story purposes.”
 - “We’ll use **Agent chat** only — no coding required from me.”
@@ -228,13 +256,15 @@ What's your recommendation on where to invest the $2M and expected outcome
 
 **Say:**
 
-| Layer | Analogy | What changed today |
-|-------|---------|-------------------|
-| Raw | New hire, files only | Big scary churn $, loose language |
-| Rules | Employee handbook | Voluntary-first, collections separate, careful wording |
-| Skills | Playbooks | Dollar ROI, tables, recommendation |
+> “We started with Growth’s plan: **spend $2M on acquisition**. Raw data made churn look catastrophic. Rules showed **what’s actionable** (voluntary vs collections). Skills ran the ROI and answered: **don’t lead with acquisition** — here’s where the $2M creates more value.”
 
-**Optional if time:** “Where should $2M go?” — you already answered in Prompt D.
+| Layer | Analogy | What changed for the **$2M decision** |
+|-------|---------|--------------------------------------|
+| Raw | New hire, files only | Might say yes to acquisition + scary churn headline |
+| Rules | Employee handbook | Focus retention on **voluntary** churn, not collections |
+| Skills | Playbooks | **Comparison table + recommendation** on the $2M |
+
+**Land the last line:** “Prompt D is the board slide — *where to invest the $2M*.”
 
 **Q&A backup line:** “If answers look identical, we forgot to reload window or we reused the old chat.”
 
