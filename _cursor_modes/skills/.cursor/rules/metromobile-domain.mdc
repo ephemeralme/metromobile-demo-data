@@ -1,0 +1,46 @@
+---
+description: Metromobile dataset definitions, churn types, and join keys
+alwaysApply: true
+---
+
+# Metromobile domain context
+
+## Scale
+
+- Prompts may say "500k subscribers" for narrative realism.
+- **This demo dataset has 50,000 rows** in `demo_customers.csv`. State the actual row count when reporting totals.
+
+## Churn (`demo_churns.csv`)
+
+When the user asks about **churn**, **attrition**, or **revenue at risk** without specifying a type:
+
+1. **Default to `disconnect_type = 'voluntary'`** only.
+2. Briefly note other types exist and offer to include them if needed.
+
+| `disconnect_type` | Treatment |
+|-------------------|-----------|
+| `voluntary` | Actionable — retention, competitive offers, service fixes |
+| `non_payment` | **Not addressable with marketing/retention offers** — collections/writeoff; do not bundle into "save" programs |
+| `involuntary` | Network/ops disconnects — different playbook |
+| `relocation` | Customer moved — low save priority |
+
+For **revenue at risk**, report:
+
+- **Voluntary** run-rate (primary)
+- Optional one-line total-all-types for comparison
+
+## Market / campaigns
+
+- Join market data on **`zip` + `month`** when time alignment matters.
+- Fiber competition flag: **`has_fiber_competitor`** in `demo_market.csv` (not `competitor_in_zip` on churns alone).
+
+## Calls (`demo_calls.csv`)
+
+- Repeat flag column is **`is_repeat_7d`** (7-day repeat), not `is_repeat_d`.
+- Data span is typically **6 months** (Oct 2025–Mar 2026). Annualize with **×2** and label it as an assumption.
+
+## Calls vs churn
+
+- Heavy call volume correlates with higher voluntary churn in this dataset.
+- **Do not claim calls cause churn** without evidence.
+- **Do not apply a causal discount** unless the user explicitly asks for a business case with one (e.g. repeat-reduction ROI).

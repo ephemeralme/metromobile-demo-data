@@ -12,9 +12,25 @@ Synthetic datasets for a broadband analytics exercise. Metromobile is modeled as
 | `demo_campaigns.csv` | Acquisition campaign test/control results by ZIP |
 | `demo_market.csv` | ZIP-level market and competitive context |
 
-## Usage
+## Branches
 
-See `PROMPTS.txt` for a guided sequence of analysis questions and expected outcomes.
+| Branch | Purpose |
+|--------|---------|
+| `master` | Data + [PROMPTS.txt](PROMPTS.txt) only |
+| **`demo`** | Cursor capabilities demo: rules, skills, `demo-mode` scripts |
+
+## Cursor demo (branch `demo`)
+
+Compare **Raw → Rules → Skills** on the same prompts:
+
+```powershell
+git checkout demo
+.\scripts\demo-mode.ps1 raw     # Act 1 — no .cursor/
+.\scripts\demo-mode.ps1 rules   # Act 2 — domain guardrails
+.\scripts\demo-mode.ps1 skills  # Act 3 — ROI playbooks
+```
+
+Reload Cursor after each switch. Facilitator guide: [DEMO_SCRIPT.md](DEMO_SCRIPT.md).
 
 ## Period
 
