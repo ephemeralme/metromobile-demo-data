@@ -7,7 +7,7 @@
 | Layer | Changes | Does NOT change |
 |-------|---------|-----------------|
 | **Raw** | Naive churn $, causal language | — |
-| **Rules** | Voluntary default, non-pay, correlation caveat | Full ROI templates |
+| **Rules** | Voluntary-first + full mix; non-pay = collections track; correlation language | Full ROI templates (skills) |
 | **Skills** | Formulas, tables, ballpark totals | — |
 
 ---

@@ -1,46 +1,42 @@
 ---
-description: Metromobile dataset definitions, churn types, and join keys
+description: Metromobile business context — how to read the demo CSVs and answer churn, calls, and market questions
 alwaysApply: true
 ---
 
-# Metromobile domain context
+# Metromobile — business context for analysis
 
-## Scale
+You are helping Metromobile (broadband ISP) leaders make decisions from five CSV files. Be direct, quantitative, and actionable.
 
-- Prompts may say "500k subscribers" for narrative realism.
-- **This demo dataset has 50,000 rows** in `demo_customers.csv`. State the actual row count when reporting totals.
+## Dataset scale
 
-## Churn (`demo_churns.csv`)
+- Narrative may reference ~500k subscribers; **`demo_customers.csv` has 50,000 rows** — always report the actual count you load.
 
-When the user asks about **churn**, **attrition**, or **revenue at risk** without specifying a type:
+## Churn: start with what we can influence
 
-1. **Default to `disconnect_type = 'voluntary'`** only.
-2. Briefly note other types exist and offer to include them if needed.
+For questions about **churn**, **attrition**, or **revenue at risk**, lead with **`disconnect_type = 'voluntary'`** — that is what retention, pricing, and competitive response can affect.
 
-| `disconnect_type` | Treatment |
-|-------------------|-----------|
-| `voluntary` | Actionable — retention, competitive offers, service fixes |
-| `non_payment` | **Not addressable with marketing/retention offers** — collections/writeoff; do not bundle into "save" programs |
-| `involuntary` | Network/ops disconnects — different playbook |
-| `relocation` | Customer moved — low save priority |
+Then add a short **full mix** summary so leadership sees the whole picture:
 
-For **revenue at risk**, report:
+| `disconnect_type` | Business meaning | Typical lever |
+|-------------------|------------------|---------------|
+| `voluntary` | Customer chose to leave | Retention offers, competitive response, service quality |
+| `non_payment` | Collections / writeoff | Billing, payment plans — **separate from retention marketing** |
+| `involuntary` | Operational disconnect | Network / provisioning |
+| `relocation` | Moved out of footprint | Low save priority |
 
-- **Voluntary** run-rate (primary)
-- Optional one-line total-all-types for comparison
+When estimating **revenue at risk** for planning, give **voluntary run-rate first**, then total-all-types as context.
 
-## Market / campaigns
+## Market and campaigns
 
-- Join market data on **`zip` + `month`** when time alignment matters.
-- Fiber competition flag: **`has_fiber_competitor`** in `demo_market.csv` (not `competitor_in_zip` on churns alone).
+- Join `demo_market.csv` on **`zip` + `month`** when time matters.
+- For fiber competition, use **`has_fiber_competitor`** in the market file (ZIP-level, time-varying).
 
-## Calls (`demo_calls.csv`)
+## Contact center
 
-- Repeat flag column is **`is_repeat_7d`** (7-day repeat), not `is_repeat_d`.
-- Data span is typically **6 months** (Oct 2025–Mar 2026). Annualize with **×2** and label it as an assumption.
+- Repeat-contact flag: **`is_repeat_7d`** (returned within 7 days).
+- Event window is **~6 months** (Oct 2025–Mar 2026); annualize to 12 months with **×2** and state that assumption.
 
-## Calls vs churn
+## Calls and churn together
 
-- Heavy call volume correlates with higher voluntary churn in this dataset.
-- **Do not claim calls cause churn** without evidence.
-- **Do not apply a causal discount** unless the user explicitly asks for a business case with one (e.g. repeat-reduction ROI).
+- In this data, **heavy callers also churn more** — report the pattern clearly.
+- Describe it as **correlation**; if the user asks for a **business case** (e.g. repeat-reduction ROI), they can layer on a causal assumption there.

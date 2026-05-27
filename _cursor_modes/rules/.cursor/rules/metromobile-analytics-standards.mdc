@@ -1,36 +1,30 @@
 ---
-description: How to report ROI, annualize, and recommend investments for Metromobile
+description: How Metromobile wants ROI and recommendations presented to leadership
 alwaysApply: true
 ---
 
-# Metromobile analytics standards
+# Metromobile — how to present numbers
 
-## Gross vs net
+## Make recommendations usable
 
-When spend is given, show **both**:
+For any dollar impact or investment ask, include:
 
-- **Gross** benefit (revenue or CLV preserved)
-- **Net** after program cost (e.g. $2M acquisition, $200 retention offer)
+1. **What you measured** (population, time window, filters)
+2. **Gross and net** when spend is known ($2M campaigns, $200 retention credits, etc.)
+3. **Assumptions** (save rate, lift, annualization)
+4. **Confidence** (high / medium / low) and **one key risk**
 
 ## Annualization
 
-- 6 months of events → multiply by **2** for a 12-month run-rate.
-- Say: "Annualized from 6 months of demo data (×2)."
+Six months of data → **×2** for a 12-month run-rate. Label it: *"Annualized from 6 months of demo data."*
 
-## Dollar recommendations
+## Campaigns (`demo_campaigns.csv`)
 
-End investment answers with:
+- Compare **test vs control** connect rates by channel.
+- **Incremental** = test rate minus control on test prospects.
+- A **connect** is a sales outcome, not necessarily an installed subscriber — say so once, then proceed.
+- Standard unit costs when provided: **$80** per door-to-door prospect, **$15** per digital prospect.
 
-1. **Assumptions** (save rate, causal %, lift, costs)
-2. **Confidence** (high / medium / low)
-3. **Key risk** (one line per option)
+## Deeper templates
 
-## Acquisition campaigns
-
-- **Connect ≠ installed subscriber** unless installs are in the data.
-- Report **incremental** connects (test rate − control on test prospects).
-- Unit costs: **$80** door-to-door prospect, **$15** digital prospect (when provided).
-
-## What rules do NOT do
-
-Rules guide judgment; they do **not** replace step-by-step ROI templates. For full campaign ROI, retention NPV, repeat-reduction cases, or investment comparison tables, follow project **skills** when present.
+For full step-by-step ROI (campaign math, retention NPV, repeat-reduction case, investment comparison table), use the project **skills** when the question matches — they add formulas and output tables on top of this context.

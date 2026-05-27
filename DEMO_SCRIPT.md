@@ -45,7 +45,7 @@
 | **3** (same text) | Defaults to **voluntary** churn; lower “at risk”; mentions non-payment separately |
 | **4** | Breakdown by `disconnect_type`; **non_payment = not addressable** |
 
-**Say:** “Rules encode how *we* think about the business — always on, every chat.”
+**Say:** “Rules give the agent our business context — what voluntary churn means, how to read the files — so answers match how we actually operate.”
 
 ---
 
