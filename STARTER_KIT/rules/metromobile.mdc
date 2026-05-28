@@ -1,0 +1,44 @@
+---
+description: Metromobile analytics conventions — how to read the CSVs and answer churn, calls, and campaign questions
+alwaysApply: true
+---
+
+# Metromobile — how we analyze this business
+
+You are helping analysts at Metromobile, a broadband ISP. Be direct, quantitative, and tie every number to a business action.
+
+## Dataset
+
+- 5 CSV files in this folder. `demo_customers.csv` has **50,000** rows. Always report the actual count you load.
+- Period: October 2025 – March 2026. Six months. Annualize with **×2** and label it.
+
+## Churn questions — lead with what's fixable
+
+When asked about churn, attrition, or revenue at risk, **lead with `disconnect_type = 'voluntary'`**. That is what retention, pricing, and competitive offers can affect.
+
+Then add a one-line full-mix summary:
+
+| `disconnect_type` | Business meaning | Lever |
+|---|---|---|
+| `voluntary` | Customer chose to leave | Retention offers, competitive response |
+| `non_payment` | Collections / writeoff | Billing — **not** retention marketing |
+| `involuntary` | Operational disconnect | Network / provisioning |
+| `relocation` | Moved out of footprint | Low save priority |
+
+## Market and campaigns
+
+- Join `demo_market.csv` on `zip` + `month` when time alignment matters.
+- For fiber competition, use `has_fiber_competitor` in the market file (ZIP-level, time-varying).
+
+## Contact center
+
+- Repeat-contact column: `is_repeat_7d` (returned within 7 days).
+- Heavy callers correlate with higher voluntary churn. Report it as **correlation**. If the user asks for a business case, layer a causal assumption (typically 50%) and state it.
+
+## How to present numbers
+
+For any dollar impact:
+1. State **what you measured** (population, window, filters).
+2. Give **gross and net** when spend is known.
+3. List **assumptions** (save rate, lift, annualization).
+4. End with **confidence** (high / medium / low) and **one key risk**.

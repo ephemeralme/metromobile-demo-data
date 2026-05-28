@@ -1,6 +1,12 @@
-# Active mode only (templates live under _cursor_modes/)
+# Active Cursor config (rules/skills/commands) — students build this live
 /.cursor/
-/.cursor.demo-backup/
-analysis_out.txt
+
+# Python build artifacts
 __pycache__/
 *.pyc
+
+# PowerPoint lock files
+~$*
+
+# Local notebooks output
+notebooks/output/
