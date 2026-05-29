@@ -14,7 +14,7 @@ Synthetic datasets for a broadband analytics exercise. Metromobile is modeled as
 
 ## Usage
 
-See `PROMPTS.txt` for a guided sequence of analysis questions and expected outcomes.
+Open this folder in [Cursor](https://cursor.com) and use Agent mode to explore the CSVs. Ask questions in plain English — no coding required.
 
 ## Period
 
